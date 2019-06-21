@@ -1,0 +1,97 @@
+\documentclass[unicode,12pt,aspectratio=169]{beamer}
+\usepackage{bxdpx-beamer}
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{zxjatype}
+\setCJKmainfont{Noto Sans CJK JP}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{listings,jlisting}
+\usepackage{eulervm}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{amsthm}
+\lstset{language={C}, basicstyle=\ttfamily\footnotesize,
+commentstyle=\textit, classoffset=1, frame=tRBl, framesep=5pt,
+numbers=left, stepnumber=1, numberstyle=\footnotesize, tabsize=2 }
+\usepackage{hyperref}
+\setsansfont[
+BoldFont={Fira Sans SemiBold},
+ItalicFont={Fira Sans Italic},
+BoldItalicFont={Fira Sans SemiBold Italic}
+]{Fira Sans}
+\setbeamertemplate{theorems}[]
+\newtheorem*{remark}{Remark}
+\begin{document}
+\begin{frame}{圏の定義}
+    \begin{tcolorbox}
+        \begin{definition}
+            圏$C$は対象(object)のクラス$ob(C)$と射(morphism)のクラス$hom(C)$から構成され、以下の公理が成り立つ
+            \begin{enumerate}
+                \item 各射$f\in hom(C)$は$a,b\in ob(C)$となる始域(domain)$a$と終域(codomain)$b$が存在して$f:a \rightarrow b$とかく
+                \item 各対象$x$に対して、次のような恒等射(identity)が存在する$1_x:x \rightarrow x$
+                \item 射$f: a \rightarrow b,g: b \rightarrow c$に対して合成$gf: a \rightarrow c$が存在する
+                \item すべての$f:a \rightarrow b$に対して、$1_bf = f1_a = f$
+                \item すべての$f:a \rightarrow b,g:b \rightarrow c,h:c \rightarrow d$に対して$(hg)f = h(gf) = hgf$となり$hgf: a\rightarrow d$とかく
+            \end{enumerate}
+        \end{definition}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{圏と対象}
+    \begin{tcolorbox}
+        \begin{remark}
+            先程の公理は射に対してのみしか言及していないため、圏とは結合法則が成り立つ合成と恒等射が存在する特殊な射のクラスと対象を用いない定義できるがここでは射と対象の両方を構成する。古典的な数学では対象があって、そこから射が生まれるのが普通であるが、ここに書くように圏論では射から対象が定義される。
+        \end{remark}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{圏と対象}
+    \begin{tcolorbox}
+        \begin{example}
+            \begin{enumerate}
+                \item Set:集合
+                \item Top:位相空間
+                \item Group:群
+                \item Ring:環
+                \item Graph:グラフ
+                \item Man:多様体
+                \item Meas:距離空間
+                \item Chr:ホモロジー代数
+                \item Model:モデル理論（記号論理学）
+            \end{enumerate}
+        \end{example}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{クラス}
+    \begin{tcolorbox}
+        \begin{remark}
+            クラスとは共通の性質によって定義される集まりのこと。集合もクラスに含まれる。クラスだが集合ではないものは真クラスという。ZFC公理系では定義されていない。\\
+            圏論では対象も射もクラスである。
+        \end{remark}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{小さな圏}
+    \begin{tcolorbox}
+        \begin{definition}
+            射が集合をなすときその圏を小さな圏という
+        \end{definition}
+        \begin{theorem}
+            射が集合のとき、恒等射の存在から対象が集合となる、その対偶として対象が真クラスの場合、恒等射の存在から射も真クラスとなる
+        \end{theorem}
+        \begin{definition}
+            任意の２つの対象$A,B$についてそれぞれを始域、終域とする射が集合をなすとき、局所的に小さな圏という
+        \end{definition}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{同型}
+    \begin{tcolorbox}
+        \begin{definition}
+            $f:a \rightarrow b$に対してある$g:b \rightarrow a$が存在して$gf=1_a , fg=1_b$が成り立つとき$a,b$を同型(isomorphic)といい、$a \cong b$とかく、また$f,g$は同型射(isomorphism)という
+        \end{definition}
+        \begin{definition}
+            $f:a \rightarrow a$のようなものを自己射(endomorphism)といい、これがaの同型射となるとき自己同型射(automorphism)という
+        \end{definition}
+        \begin{definition}
+            すべての射が同型射なものを亜群(groupoid)という
+        \end{definition}
+    \end{tcolorbox}
+\end{frame}
+\end{document}
