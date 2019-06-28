@@ -1,0 +1,74 @@
+\documentclass[unicode,12pt,aspectratio=169]{beamer}
+\usepackage{bxdpx-beamer}
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{zxjatype}
+\setCJKmainfont{Noto Sans CJK JP}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{listings,jlisting}
+\usepackage{eulervm}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{amsthm}
+\lstset{language={C}, basicstyle=\ttfamily\footnotesize,
+commentstyle=\textit, classoffset=1, frame=tRBl, framesep=5pt,
+numbers=left, stepnumber=1, numberstyle=\footnotesize, tabsize=2 }
+\usepackage{hyperref}
+\setsansfont[
+BoldFont={Fira Sans SemiBold},
+ItalicFont={Fira Sans Italic},
+BoldItalicFont={Fira Sans SemiBold Italic}
+]{Fira Sans}
+\setbeamertemplate{theorems}[]
+\newtheorem*{remark}{Remark}
+\begin{document}
+\begin{frame}{部分圏 P8}
+    \begin{tcolorbox}
+        \begin{definition}
+            圏Dの対象及び射が圏Cに含まれるとき、DをCの部分圏という。
+        \end{definition}
+        \begin{theorem}
+            すべての圏Cはその部分圏にCのすべての同型射を含む最大部分圏が存在する
+        \end{theorem}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{証明 Excercise 1.1.ii}
+    \begin{tcolorbox}
+        \begin{remark}
+            ここで、ツォルンの補題等集合論の公理や諸定理を用いてはならない
+        \end{remark}
+        \begin{proof}
+            (存在)\\
+            すべての対象に対してその自己同型射は同型である。また、すべての対象及びその自己同型射からなる集まりは部分圏となる。よりこれは亜群となる。
+
+            (すべての同型射からなる集まりは圏となる)\\
+            ホワイトボードでやります・・・
+        \end{proof}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{証明 Excercise 1.1.iii}
+    \begin{tcolorbox}
+        ホワイトボードにて・・・
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{反対圏 P9,10}
+    \begin{tcolorbox}
+        \begin{definition}
+            圏Cに対して、同じ対象をもち、すべての射に対して始域と終域を入れ替えた射を持っている圏$C^{op}$を反対圏という
+        \end{definition}
+        これにより、圏の定理は二重性をもつ。例示は以下にする。
+        \begin{theorem}
+            以下の３つは同値である。
+            \begin{enumerate}
+                \item 射$f:x \rightarrow y$が同型
+                \item すべての対象$c$に対して$f_*:C(c,x) \rightarrow C(c,y)$が全単射
+                \item すべての対象$c$に対して$f^*:C(x,c) \rightarrow C(y,c)$が全単射
+            \end{enumerate}
+        \end{theorem}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{}
+    \begin{tcolorbox}
+    \end{tcolorbox}
+\end{frame}
+\end{document}
