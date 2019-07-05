@@ -1,0 +1,91 @@
+\documentclass[unicode,12pt,aspectratio=169]{beamer}
+\usepackage{bxdpx-beamer}
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{zxjatype}
+\setCJKmainfont{Noto Sans CJK JP}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{listings,jlisting}
+\usepackage{eulervm}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{amsthm}
+\lstset{language={C}, basicstyle=\ttfamily\footnotesize,
+commentstyle=\textit, classoffset=1, frame=tRBl, framesep=5pt,
+numbers=left, stepnumber=1, numberstyle=\footnotesize, tabsize=2 }
+\usepackage{hyperref}
+\setsansfont[
+BoldFont={Fira Sans SemiBold},
+ItalicFont={Fira Sans Italic},
+BoldItalicFont={Fira Sans SemiBold Italic}
+]{Fira Sans}
+\setbeamertemplate{theorems}[]
+\newtheorem*{remark}{Remark}
+\begin{document}
+\begin{frame}{モノ射とエピ射 P11}
+    \begin{tcolorbox}
+       \begin{definition}
+           \begin{enumerate}
+               \item モノ射または単射とは$f\circ g=f\circ h \Rightarrow g=h$であるような$f$である。即ち、$f_*$が単射である。
+               \item エピ射または全射とは$g\circ f=h\circ f \Rightarrow g=h$であるような$f$である。即ち、$f^*$が単射である。
+           \end{enumerate}
+       \end{definition}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{注意点P12}
+    \begin{tcolorbox}
+        \begin{remark}
+            圏の射が何かしらの写像だった場合、集合論的全射であればモノ射であり、集合論的単射であればエピ射であるが、逆は必ずしも成り立たない。環の圏において包含環準同型$\mathbb{Z}\hookrightarrow \mathbb{Q}$は全単射ではないがモノ射でありエピ射である。
+        \end{remark}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{補題1.2.11}
+    \begin{tcolorbox}
+        \begin{theorem}
+            \begin{enumerate}
+                \item モノ射の合成はモノ射
+                \item モノ射$gf$の$f$はモノ射
+                \item エピ射の合成はエピ射
+                \item エピ射$gf$の$g$はエピ射
+            \end{enumerate}
+            \begin{proof}
+                ホワイトボードにて・・・
+            \end{proof}
+        \end{theorem}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{関手}
+    \begin{tcolorbox}
+        \begin{definition}
+            関手$F:C \rightarrow D$は
+            \begin{enumerate}
+                \item $C$の対象$c$を$D$の対象$F c$に移す
+                \item $C$の射$f:A\rightarrow B$をDの射$F f:F A \rightarrow F B$に移す
+                \item $C$の恒等射は$D$の恒等射に移す
+                \item $F g\cdot F f=F(g \circ f)$
+            \end{enumerate}
+        \end{definition}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{位相空間での使用例P15}
+    \begin{tcolorbox}
+        \begin{theorem}
+            $f:D^2 \rightarrow D^2$な連続関数は必ず不動点を持つ
+        \end{theorem}
+        \begin{proof}
+            ホワイトボードにて・・・
+        \end{proof}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{共変と反変}
+    \begin{tcolorbox}
+        \begin{definition}
+            先程定義したのは共変関手である。また、圏$C^op$と$D$を対応させる場合を反変関手という。
+        \end{definition}
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{}
+    \begin{tcolorbox}
+    \end{tcolorbox}
+\end{frame}
+\end{document}
